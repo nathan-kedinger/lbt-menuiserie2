@@ -1,12 +1,12 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
-import TheHeader from './components/TheHeader.vue'
+import TheHeader from './components/Header/MainHeader.vue'
 </script>
 
 <template>
   <TheHeader />
-  <div class="container">
-    <main>
+  <main>
+    <div class="container px-4">
       <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
       <div class="wrapper">
@@ -14,8 +14,8 @@ import TheHeader from './components/TheHeader.vue'
       </div>
 
       <RouterView />
-    </main>
-  </div>
+    </div>
+  </main>
 </template>
 
 <style scoped></style>

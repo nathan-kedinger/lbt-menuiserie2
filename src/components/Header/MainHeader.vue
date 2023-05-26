@@ -1,7 +1,7 @@
 <template>
   <header>
     <img
-      class="hidden relative mx-auto mt-8 h-auto w-auto md:block rounded-full"
+      class="hidden relative mx-auto mt-8 h-full w-auto md:block rounded-full"
       src="../../assets/img/logobastien-min.jpg"
       alt="Your Company"
     />

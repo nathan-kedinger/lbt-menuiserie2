@@ -4,7 +4,7 @@
       @click="scrollTop"
       v-show="isShown"
       src="@/assets/img/logobastien-min.jpg"
-      class="rounded-full h-10 w- auto z-50 fixed right-3 bottom-4"
+      class="rounded-full h-10 w-auto z-50 fixed right-3 bottom-4"
       alt="scroll top button"
     />
   </div>

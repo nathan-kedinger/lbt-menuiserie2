@@ -1,8 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import WhereView from '../views/WhereView.vue'
+import WhereView from '../views/RealisationsView.vue'
 import LegalView from '@/views/LegalView.vue'
 import SitePlanView from '@/views/SitePlanView.vue'
+import RealisationsView from '@/views/RealisationsView.vue'
+import PartnershipView from '@/views/PartnershipView.vue'
+import ContactView from '@/views/ContactView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -13,10 +16,21 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/where',
-      name: 'where',
-      component: WhereView
+      path: '/realisations',
+      name: 'realisations',
+      component: RealisationsView
     },
+    {
+      path: '/partenaires',
+      name: 'partnership',
+      component: PartnershipView
+    },
+    {
+      path: '/contact',
+      name: 'contact',
+      component: ContactView
+    },
+
     {
       path: '/legal',
       name: 'legal',
@@ -33,7 +47,7 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue')
+      component: () => import('../views/PartnershipView.vue')
     }
   ]
 })

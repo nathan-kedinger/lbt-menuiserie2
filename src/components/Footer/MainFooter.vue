@@ -1,4 +1,4 @@
-<template>
+<template class="absolute left-0 bottom-0 right-0">
   <footer>
     <div class="bg-black text-white">
       <div class="grid grid-flow-col justify-stretch gap-x-4">

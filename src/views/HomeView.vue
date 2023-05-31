@@ -1,9 +1,13 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+import PresentationArticle from '@/components/HomePageComponents/PresentationArticle.vue'
+import SeparationComponent from '@/components/UtilityComponent/SeparationComponent.vue'
+import DescriptionArticle from '@/components/HomePageComponents/DescriptionArticle.vue'
 </script>
 
 <template>
   <main>
-    <TheWelcome />
+    <PresentationArticle />
+    <SeparationComponent></SeparationComponent>
+    <DescriptionArticle></DescriptionArticle>
   </main>
 </template>

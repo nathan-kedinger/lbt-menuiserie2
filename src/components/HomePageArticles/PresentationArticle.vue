@@ -10,7 +10,7 @@
     <div class="reveal-bottom-left p-5 -mb-10 bg-white lg:col-start-1 lg:col-span-4 lg:row-end-5">
       <h2 class="font-bold text-xl">Agencement, cuisines, salles de bain, en pose ou sur mesure</h2>
       <p>__</p>
-      <RouterLink to="/realisations">Nos réalisations</RouterLink>
+      <RouterLink class="hover:text-yellow-600" to="/realisations">Nos réalisations</RouterLink>
     </div>
     <div
       class="lg:col-start-6 lg:col-span-4 lg:row-start-1 lg:row-span-6 z-10 overflow-hidden relative"
@@ -71,40 +71,9 @@
 }
 </style>
 <script setup>
-import { onMounted, onBeforeUnmount } from 'vue'
+import useIntersectionObserver from '@/assets/js/useIntersectionObserver'
 
-onMounted(() => {
-  const threshold = 0.1
-  const options = {
-    root: null,
-    rootMargin: '0px',
-    threshold
-  }
-
-  const handleIntersect = function (entries, observer) {
-    entries.forEach(function (entry) {
-      if (entry.intersectionRatio > threshold) {
-        entry.target.classList.add('reveal-visible')
-        observer.unobserve(entry.target)
-      }
-    })
-  }
-
-  const observer = new IntersectionObserver(handleIntersect, options)
-  const targets = document.querySelectorAll(
-    '.reveal-left, .reveal-right, .reveal-top, .reveal-bottom-left, .reveal-bottom-right'
-  )
-  targets.forEach(function (target) {
-    observer.observe(target)
-  })
-})
-
-onBeforeUnmount(() => {
-  const targets = document.querySelectorAll(
-    '.reveal-left, .reveal-right, .reveal-top, .reveal-bottom-left, .reveal-bottom-right'
-  )
-  targets.forEach(function (target) {
-    target.classList.remove('reveal-visible')
-  })
-})
+useIntersectionObserver([
+  '.reveal-left, .reveal-right, .reveal-top, .reveal-bottom-left, .reveal-bottom-right'
+])
 </script>

@@ -3,11 +3,9 @@
 <template>
   <h3 class="text-center text-3xl">Artisan menuisier, fabricant et poseur du Trièves</h3>
   <p class="m-5">
-    Aujourd'hui, l'entreprise spécialisée dans le travail du bois fabrique et pose sur grenoble et
-    dans toute sa région. Nous sommes spécialisés dans l'agencement de qualité et sommes en mesure
-    de répondre à vos besoin tout en respectant vos budget. L'entreprise s'implante dans une
-    démarche locale et oeuvre principalement dans les villes les plus proches de son siège :
-    Monestier-de-Clermont.
+    L'entreprise spécialisée dans le travail du bois, fabrique et pose sur grenoble et dans toute sa
+    région. Nous sommes spécialisés dans l'agencement et en mesure de répondre à vos besoins, tout
+    en respectant, vos budgets et vos délais.
   </p>
   <div class="flex flex-col lg:grid lg:grid-cols-2">
     <div class="col-start-1 text-center">

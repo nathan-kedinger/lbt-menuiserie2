@@ -1,12 +1,12 @@
 <script setup>
 import MainHeader from '@/components/Header/MainHeader.vue'
 import MainFooter from '@/components/Footer/MainFooter.vue'
-import ArrowUp from '@/components/UtilityComponent/ArrowUp.vue'
-import ContactsLogos from '@/components/UtilityComponent/ContactsLogos.vue'
+import ArrowUp from '@/components/UtilityComponent/ArrowUpComponent.vue'
+import ContactsLogos from '@/components/UtilityComponent/RightTopContactsLogosComponent.vue'
 </script>
 
 <template>
-  <div class="container px-44">
+  <div class="container lg:px-44">
     <MainHeader />
     <ContactsLogos />
     <main class="relative">

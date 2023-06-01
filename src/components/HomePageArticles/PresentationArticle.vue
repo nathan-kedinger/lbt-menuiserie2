@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col lg:grid lg:grid-cols-12 lg:grid-rows-7">
+  <div class="flex flex-col lg:grid lg:grid-cols-12 lg:grid-rows-7 mt-24">
     <div class="lg:col-start-1 lg:col-span-5 lg:row-start-1 lg:row-span-4">
       <img
         class="reveal-left lg:pr-2"
@@ -33,7 +33,7 @@
       />
     </div>
     <div
-      class="p-10 bg-white lg:col-start-10 lg:col-span-4 lg:row-start-2 text-center font-semibold"
+      class="p-10 bg-white lg:col-start-10 lg:col-span-4 lg:row-start-2 text-center font-semibold rounded-tr-3xl"
     >
       <p class="reveal-right text-xl">
         LB Trièves MENUISERIE, une entreprise du Trièves, au coeur des montagnes. C'est à

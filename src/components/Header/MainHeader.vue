@@ -4,7 +4,7 @@
     <img
       class="hidden relative mx-auto mt-8 h-32 w-auto md:block rounded-full"
       src="../../assets/img/logobastien-min.jpg"
-      alt="Your Company"
+      alt="Logo LB Trièves Menuiserie"
     />
     <Disclosure as="nav" class="sm:mt-8" v-slot="{ open }">
       <div class="w-full px-2 sm:px-6 lg:px-8 border-t-2 border-black">
@@ -25,7 +25,7 @@
               <img
                 class="block h-10 w-auto md:hidden rounded-full"
                 src="../../assets/img/logobastien-min.jpg"
-                alt="Your Company"
+                alt="logo LB Trièves menuiserie"
               />
             </div>
             <div class="hidden w-full sm:ml-6 sm:block">
@@ -37,8 +37,8 @@
                   :class="[
                     item.current
                       ? 'text-yellow-600'
-                      : 'text-dark text-2xl font-semibold hover:text-yellow-600',
-                    'rounded-md px-3 py-2 text-sm text-2xl font-semibold font-medium'
+                      : 'text-dark text-xl font-semibold hover:text-yellow-600',
+                    'rounded-md px-3 py-2 text-sm text-xl font-semibold font-medium'
                   ]"
                   :aria-current="item.current ? 'page' : undefined"
                   @click="updateCurrent(item)"
@@ -50,7 +50,7 @@
         </div>
       </div>
 
-      <DisclosurePanel class="sm:hidden">
+      <DisclosurePanel class="sm:hidden z-50">
         <div class="space-y-1 px-2 pb-3 pt-2">
           <RouterLink
             v-for="item in navigation"

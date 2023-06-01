@@ -6,7 +6,7 @@ import ContactsLogos from '@/components/UtilityComponent/RightTopContactsLogosCo
 </script>
 
 <template>
-  <div class="container lg:px-44">
+  <div class="container px-5 lg:px-40">
     <MainHeader />
     <ContactsLogos />
     <main class="relative">

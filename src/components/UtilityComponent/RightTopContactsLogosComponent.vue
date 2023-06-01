@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed right-4 top-10 z-50">
+  <div class="fixed right-1 top-3 z-10">
     <ul>
       <li class="relative">
         <a @click="showPhoneNumber">

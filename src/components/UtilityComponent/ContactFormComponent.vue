@@ -1,16 +1,28 @@
 <template>
   <div class="isolate bg-white px-6 py-4 sm:py-5 lg:px-8">
     <div class="mx-auto max-w-2xl text-center">
-      <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-        Parlons de votre projet
+      <h2 class="text-xl font-bold tracking-tight text-gray-900 sm:text-3xl">
+        Parlez-nous de votre projet
       </h2>
       <p class="mt-2 text-lg leading-8 text-gray-600">
         Envoyez nous un message pour une demande de devis ou pour tout autre renseignement.
       </p>
     </div>
     <form action="#" method="POST" class="mx-auto mt-5 max-w-xl sm:mt-5">
+      <label for="statue" class="block text-sm font-semibold leading-6 text-gray-900"
+        >Je suis :
+      </label>
+      <select
+        id="statue"
+        name="statue"
+        v-model="statue"
+        class="block w-full rounded-md bg-white border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+      >
+        <option value="particulier">Particulier</option>
+        <option value="entreprise">Entreprise</option>
+      </select>
       <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
-        <div>
+        <div v-if="statue === 'particulier'">
           <label for="first-name" class="block text-sm font-semibold leading-6 text-gray-900"
             >Prénom</label
           >
@@ -24,7 +36,7 @@
             />
           </div>
         </div>
-        <div>
+        <div v-if="statue === 'particulier'">
           <label for="last-name" class="block text-sm font-semibold leading-6 text-gray-900"
             >Nom de famille</label
           >
@@ -38,9 +50,9 @@
             />
           </div>
         </div>
-        <div class="sm:col-span-2">
+        <div v-if="statue === 'entreprise'" class="sm:col-span-2">
           <label for="company" class="block text-sm font-semibold leading-6 text-gray-900"
-            >Entreprise (facultatif)</label
+            >Entreprise</label
           >
           <div class="mt-1.5">
             <input
@@ -71,6 +83,21 @@
             >Numéro de téléphone (facultatif)</label
           >
           <div class="relative mt-1.5">
+            <div class="absolute inset-y-0 left-0 flex items-center">
+              <label for="country" class="sr-only">Country</label>
+              <select
+                id="country"
+                name="country"
+                class="h-full rounded-md border-0 bg-transparent bg-none py-0 pl-4 pr-9 text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm"
+              >
+                <option>FR</option>
+                <option>BE</option>
+              </select>
+              <ChevronDownIcon
+                class="pointer-events-none absolute right-3 top-0 h-full w-5 text-gray-400"
+                aria-hidden="true"
+              />
+            </div>
             <input
               type="tel"
               name="phone-number"
@@ -98,7 +125,7 @@
             <Switch
               v-model="agreed"
               :class="[
-                agreed ? 'bg-yellow-900' : 'bg-gray-200',
+                agreed ? 'bg-yellow-950' : 'bg-gray-200',
                 'flex w-8 flex-none cursor-pointer rounded-full p-px ring-1 ring-inset ring-gray-900/5 transition-colors duration-200 ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
               ]"
             >
@@ -122,7 +149,7 @@
       <div class="mt-10">
         <button
           type="submit"
-          class="block w-full rounded-md bg-yellow-900 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-yellow-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          class="block w-full rounded-md bg-yellow-950 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-yellow-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
         >
           Envoyer
         </button>
@@ -137,4 +164,5 @@
 import { ref } from 'vue'
 import { Switch, SwitchGroup, SwitchLabel } from '@headlessui/vue'
 const agreed = ref(false)
+const statue = ref('particulier')
 </script>

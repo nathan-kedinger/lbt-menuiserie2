@@ -1,7 +1,8 @@
 <template>
   <header>
+    <div class="absolute top-0 left-0 right-0 bg-amber-50 h-3/5 -z-10"></div>
     <img
-      class="hidden relative mx-auto mt-8 h-full w-auto md:block rounded-full"
+      class="hidden relative mx-auto mt-8 h-32 w-auto md:block rounded-full"
       src="../../assets/img/logobastien-min.jpg"
       alt="Your Company"
     />
@@ -34,8 +35,10 @@
                   :key="item.name"
                   :to="item.href"
                   :class="[
-                    item.current ? 'text-yellow-600' : 'text-dark hover:text-yellow-600',
-                    'rounded-md px-3 py-2 text-sm font-medium'
+                    item.current
+                      ? 'text-yellow-600'
+                      : 'text-dark text-2xl font-semibold hover:text-yellow-600',
+                    'rounded-md px-3 py-2 text-sm text-2xl font-semibold font-medium'
                   ]"
                   :aria-current="item.current ? 'page' : undefined"
                   @click="updateCurrent(item)"
@@ -77,7 +80,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
 
 const navigation = ref([
   { name: 'ACCUEIL', href: '/', current: true },
-  { name: 'CUISINE ET AGENCEMENT', href: '/', current: false },
+  { name: 'CUISINES ET AGENCEMENTS', href: '/', current: false },
   { name: 'PARTENAIRES', href: '/about', current: false },
   { name: 'DEVIS', href: '/where', current: false }
 ])

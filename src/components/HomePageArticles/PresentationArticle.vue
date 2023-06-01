@@ -2,13 +2,15 @@
   <div class="flex flex-col lg:grid lg:grid-cols-12 lg:grid-rows-7">
     <div class="lg:col-start-1 lg:col-span-5 lg:row-start-1 lg:row-span-4">
       <img
-        class="reveal-left lg:border-r-8 border-white"
+        class="reveal-left lg:pr-2"
         src="@/assets/img/cuisine1-min.jpg"
         alt="cuisine double hauteur gain d'espace"
       />
     </div>
     <div class="reveal-bottom-left p-5 -mb-10 bg-white lg:col-start-1 lg:col-span-4 lg:row-end-5">
-      <h2 class="font-bold text-xl">Agencement, cuisines, salles de bain, en pose ou sur mesure</h2>
+      <h2 class="font-bold text-xl">
+        Agencement intérieur et extérieur, cuisines, en pose ou sur mesure
+      </h2>
       <p>__</p>
       <RouterLink class="hover:text-yellow-600" to="/realisations">Nos réalisations</RouterLink>
     </div>
@@ -16,7 +18,7 @@
       class="lg:col-start-6 lg:col-span-4 lg:row-start-1 lg:row-span-6 z-10 overflow-hidden relative"
     >
       <img
-        class="reveal-top absolute top-0 left-0 w-full h-full lg:border-l-8 border-white object-cover object-top"
+        class="reveal-top absolute top-0 left-0 w-full h-full lg:pl-2 object-cover object-top"
         src="@/assets/img/cuisine10-min.jpg"
         alt="Cuisine plan de travail blanc et façades en bois massif"
       />
@@ -31,7 +33,7 @@
       />
     </div>
     <div
-      class="p-5 bg-white lg:col-start-10 lg:col-span-4 lg:row-start-2 text-center font-semibold"
+      class="p-10 bg-white lg:col-start-10 lg:col-span-4 lg:row-start-2 text-center font-semibold"
     >
       <p class="reveal-right text-xl">
         LB Trièves MENUISERIE, une entreprise du Trièves, au coeur des montagnes. C'est à

@@ -1,9 +1,9 @@
 <script setup>
-import PresentationArticle from '@/components/HomePageArticles/PresentationArticle.vue'
+import PresentationArticle from '@/components/HomePage/TopArticle.vue'
 import SeparationComponent from '@/components/UtilityComponent/SeparationComponent.vue'
-import DescriptionArticle from '@/components/HomePageArticles/DescriptionArticle.vue'
+import DescriptionArticle from '@/components/HomePage/DescriptionArticle.vue'
 import ContactArticle from '@/components/SharedArticles/ContactArticle.vue'
-import KnowledgeArticle from '@/components/HomePageArticles/KnowledgeArticle.vue'
+import KnowledgeArticle from '@/components/HomePage/PrestationsArticle.vue'
 </script>
 
 <template>

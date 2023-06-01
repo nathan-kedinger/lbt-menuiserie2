@@ -23,7 +23,7 @@
       </select>
       <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
         <div v-if="statue === 'particulier'">
-          <label for="first-name" class="block text-sm font-semibold leading-6 text-gray-900"
+          <label for="first-name" class="mt-2.5 block text-sm font-semibold leading-6 text-gray-900"
             >Prénom</label
           >
           <div class="mt-1.5">
@@ -37,7 +37,7 @@
           </div>
         </div>
         <div v-if="statue === 'particulier'">
-          <label for="last-name" class="block text-sm font-semibold leading-6 text-gray-900"
+          <label for="last-name" class="mt-2.5 block text-sm font-semibold leading-6 text-gray-900"
             >Nom de famille</label
           >
           <div class="mt-1.5">
@@ -51,7 +51,7 @@
           </div>
         </div>
         <div v-if="statue === 'entreprise'" class="sm:col-span-2">
-          <label for="company" class="block text-sm font-semibold leading-6 text-gray-900"
+          <label for="company" class="mt-2.5 block text-sm font-semibold leading-6 text-gray-900"
             >Entreprise</label
           >
           <div class="mt-1.5">

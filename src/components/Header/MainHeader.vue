@@ -80,7 +80,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
 
 const navigation = ref([
   { name: 'ACCUEIL', href: '/', current: true },
-  { name: 'CUISINES ET AGENCEMENTS', href: '/', current: false },
+  { name: 'CUISINES ET AGENCEMENTS', href: '/realisations', current: false },
   { name: 'PARTENAIRES', href: '/about', current: false },
   { name: 'DEVIS', href: '/where', current: false }
 ])

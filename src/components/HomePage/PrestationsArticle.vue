@@ -18,8 +18,8 @@
       :data-aos-delay="(index + 1) * 200"
     >
       <RouterLink :to="prestation.to">
-        <img class="h-full w-full" :src="prestation.src" />
-        <div class="bg-white lg:-m-6 lg:absolute -bottom-10 lg:right-10 mb-5">
+        <img class="hover:drop-shadow-2xl h-full w-full" :src="prestation.src" />
+        <div class="bg-white pl-5 lg:-m-6 lg:absolute -bottom-10 lg:right-10 mb-5">
           <h3 class="font-bold mb-1 text-xl">{{ prestation.h3 }}</h3>
           <p>{{ prestation.p }}</p>
           <br />
@@ -42,8 +42,8 @@ import 'aos/dist/aos.css'
 onMounted(() => {
   AOS.init({
     offset: 200,
-    delay: 0.1,
-    duration: 1500
+    delay: 0,
+    duration: 1000
   })
 })
 
@@ -60,7 +60,7 @@ const prestations = ref([
     to: '/',
     colNumber: '3',
     src: exterieur,
-    p: 'Terrasse, pergola, jardinière, bardage.'
+    p: 'Terrasse, pergola, marquise, jardinière, bardage.'
   },
   {
     h3: 'Sol et plafond :',

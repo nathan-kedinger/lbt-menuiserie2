@@ -19,7 +19,7 @@
   </div>
 
   <div>
-    <div v-for="item in navigation" :key="item.name" :x-show="item.current">
+    <div v-for="item in navigation" :key="item.name" v-show="item.current">
       <component :is="item.galerie" />
     </div>
   </div>

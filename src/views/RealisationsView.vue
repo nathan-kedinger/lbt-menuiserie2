@@ -7,7 +7,7 @@
         :class="[
           item.current
             ? 'text-yellow-600'
-            : 'text-dark text-xl font-semibold hover:text-yellow-600',
+            : 'text-dark text-xl font-semibold hover:text-yellow-600 ',
           'rounded-md px-3 py-2 text-sm text-xl font-semibold font-medium'
         ]"
         :aria-current="item.current ? 'page' : undefined"

@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col lg:grid lg:gap-10 lg:grid-cols-4 lg:my-20">
-    <div class="col-start-1 rounded-full text-center bg-amber-50 p-8">
-      <h3 class="text-2xl font-bold m-4">Nos prestations</h3>
+    <div class="col-start-1">
+      <h3 class="text-4xl font-bold my-4">Nos prestations</h3>
       <p>
         Nous prennons le temps de réfléchir ensemble, du début à la fin de votre projet. Qu'il soit
         d'un design contemporain ou traditionnel.<br />

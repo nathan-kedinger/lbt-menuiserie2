@@ -1,6 +1,7 @@
 <template>
   <header>
-    <div class="absolute top-0 left-0 right-0 bg-amber-50 h-3/5 -z-10"></div>
+    <!-- Background color -->
+    <!--<div class="absolute top-0 left-0 right-0 bg-amber-50 h-3/5 -z-10"></div>-->
     <img
       class="hidden relative mx-auto mt-8 h-32 w-auto md:block rounded-full"
       src="../../assets/img/logobastien-min.jpg"
@@ -80,7 +81,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
 
 const navigation = ref([
   { name: 'ACCUEIL', href: '/', current: true },
-  { name: 'CUISINES ET AGENCEMENTS', href: '/realisations', current: false },
+  { name: 'REALISATIONS', href: '/realisations', current: false },
   { name: 'PARTENAIRES', href: '/about', current: false },
   { name: 'DEVIS', href: '/where', current: false }
 ])

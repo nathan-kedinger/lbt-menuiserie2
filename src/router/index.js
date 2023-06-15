@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import WhereView from '../views/RealisationsView.vue'
 import LegalView from '@/views/LegalView.vue'
 import SitePlanView from '@/views/SitePlanView.vue'
 import RealisationsView from '@/views/RealisationsView.vue'

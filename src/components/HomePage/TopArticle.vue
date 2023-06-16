@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col lg:grid lg:grid-cols-12 lg:grid-rows-7 mt-24">
+  <div class="lg:grid lg:grid-cols-12 lg:grid-rows-7 mt-24">
     <div class="lg:col-start-1 lg:col-span-5 lg:row-start-1 lg:row-span-4">
       <img
         class="reveal-left lg:pr-2"

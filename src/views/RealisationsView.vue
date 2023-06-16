@@ -1,19 +1,19 @@
 <template>
   <div class="sm:ml-6 sm:block">
-    <div class="flex justify-center">
-      <div
-        v-for="item in navigation"
-        :key="item.name"
-        :class="[
-          item.current
-            ? 'text-yellow-600'
-            : 'text-dark text-xl font-semibold hover:text-yellow-600 ',
-          'rounded-md px-3 py-2 text-sm text-xl font-semibold font-medium'
-        ]"
-        :aria-current="item.current ? 'page' : undefined"
-        @click="updateCurrent(item)"
-      >
-        {{ item.name }}
+    <div class="flex justify-center border-2">
+      <div>
+        <div
+          v-for="item in navigation"
+          :key="item.name"
+          :class="[
+            item.current ? 'text-yellow-600' : 'text-dark font-semibold hover:text-yellow-600 ',
+            'rounded-md border-2 bg-amber-50 px-3 py-2 text-sm  font-semibold font-medium'
+          ]"
+          :aria-current="item.current ? 'page' : undefined"
+          @click="updateCurrent(item)"
+        >
+          {{ item.name }}
+        </div>
       </div>
     </div>
   </div>
@@ -38,7 +38,7 @@ const navigation = ref([
     current: false,
     galerie: OutdoorGalerieArticle
   },
-  { name: 'PARQUETS', href: '/about', current: false, galerie: FloorGalerieArticle }
+  { name: 'SOLS ET PLAFONDS', href: '/about', current: false, galerie: FloorGalerieArticle }
 ])
 function updateCurrent(item) {
   navigation.value.forEach(function (navItem) {

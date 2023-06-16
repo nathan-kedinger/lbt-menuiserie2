@@ -6,18 +6,21 @@
     Vous serrez acompagnés de conseils professionnels pendant toute la durée du projet.
   </p>
 
-  <div class="flex flex-col lg:grid lg:gap-7 lg: grid-cols-6 grid-rows-6">
+  <div class="lg:grid lg:gap-5 lg:grid-cols-9" v-if="imagesReady">
     <div
       v-for="image in images"
       :key="image.name"
-      :class="'col-span-' + image.width + ' row-span-' + image.height"
-      class="relative hover:scale-105 ease-in-out duration-150"
+      :class="[
+        'hover:scale-105 ease-in-out duration-300 overflow-hidden  ',
+        `col-span-${image.size}`,
+        `row-span-${image.size}`
+      ]"
       @click="selectedImage = image"
     >
-      <img :src="image.src" :alt="image.alt" class="image-class" />
+      <img :src="image.src" :alt="image.alt" class="image-class rounded-lg" />
       <div v-if="image.description" class="relative bg-white p-3 -my-16 -ml-3 mr-10">
         <h2 class="font-bold text-xl">
-          Agencement intérieur et extérieur, cuisines, en pose ou sur mesure
+          {{ image.alt }}
         </h2>
       </div>
     </div>
@@ -65,7 +68,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, watchEffect } from 'vue'
 import cuisine1 from '@/assets/img/cuisine1-min.jpg'
 import cuisine2 from '@/assets/img/cuisine2-min.jpg'
 import cuisine4 from '@/assets/img/cuisine4-min.jpg'
@@ -73,8 +76,8 @@ import cuisine5 from '@/assets/img/cuisine5-min.jpg'
 import cuisine6 from '@/assets/img/cuisine6-min.jpg'
 import cuisine7 from '@/assets/img/cuisine7-min.jpg'
 
-let selectedImage = ref(null)
-
+const selectedImage = ref(null)
+let imagesReady = ref(false)
 function height(id) {
   let theHeight
   if (id % 4 === 1) {
@@ -85,39 +88,42 @@ function height(id) {
   return theHeight
 }
 
-let imgArray = [
-  [cuisine1, 'cuisine', 'Cuisine blanche bois'],
-  [cuisine2, 'cuisine', 'Cuisine blanche'],
-  [cuisine4, 'cuisine', 'Cuisine bois massif'],
-  [cuisine5, 'cuisine', 'Cuisine rouge vif'],
-  [cuisine6, 'meuble', 'Meuble laqué'],
-  [cuisine7, 'cuisine', 'Cuisine blanche bois'],
-  [cuisine2, 'cuisine', 'Cuisine blanche'],
-  [cuisine4, 'cuisine', 'Cuisine bois massif'],
-  [cuisine5, 'cuisine', 'Cuisine rouge vif'],
-  [cuisine7, 'meuble', 'Meuble laqué'],
-  [cuisine1, 'cuisine', 'Cuisine blanche bois'],
-  [cuisine2, 'cuisine', 'Cuisine blanche'],
-  [cuisine4, 'cuisine', 'Cuisine bois massif'],
-  [cuisine5, 'cuisine', 'Cuisine rouge vif'],
-  [cuisine1, 'cuisine', 'Cuisine blanche bois'],
-  [cuisine6, 'meuble', 'Meuble laqué']
+const imgArray = [
+  [cuisine1, 'cuisine', 'Cuisine blanche bois', '1'],
+  [cuisine2, 'cuisine', 'Cuisine blanche', '0'],
+  [cuisine4, 'cuisine', 'Cuisine bois massif', '0'],
+  [cuisine5, 'cuisine', 'Cuisine rouge vif', '0'],
+  [cuisine6, 'meuble', 'Meuble laqué', '1'],
+  [cuisine7, 'cuisine', 'Cuisine blanche bois', '0'],
+  [cuisine2, 'cuisine', 'Cuisine blanche', '0'],
+  [cuisine4, 'cuisine', 'Cuisine bois massif', '0'],
+  [cuisine5, 'cuisine', 'Cuisine rouge vif', '0'],
+  [cuisine7, 'meuble', 'Meuble laqué', '0'],
+  [cuisine1, 'cuisine', 'Cuisine blanche bois', '1'],
+  [cuisine2, 'cuisine', 'Cuisine blanche', '0'],
+  [cuisine4, 'cuisine', 'Cuisine bois massif', '0'],
+  [cuisine5, 'cuisine', 'Cuisine rouge vif', '0'],
+  [cuisine1, 'cuisine', 'Cuisine blanche bois', '0'],
+  [cuisine6, 'meuble', 'Meuble laqué', '1']
 ]
 
 const images = ref(
   imgArray.map((img, index) => {
     let id = index + 1
+    let imgSize = img[3] === '1' ? '3' : '2'
     return {
       id: id,
       src: img[0],
       name: img[1],
       alt: img[2],
-      description: id % 4 === 1,
-      height: height(id),
-      width: height(id)
+      description: img[3] === '1',
+      size: imgSize
     }
   })
 )
+watchEffect(() => {
+  imagesReady.value = images.value.every((image) => image.size)
+})
 </script>
 
 <style scoped>

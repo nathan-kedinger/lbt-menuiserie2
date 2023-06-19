@@ -1,20 +1,15 @@
 <template>
-  <h3>Cuisines et agencements intérieurs</h3>
-  <p>
+  <p class="m-10">
     Nous réalisons toutes vos demandes d'agencements intérieurs. Nos compétences s'étendent de la
     conception et la fabrication complète de vos agencements, à la pose simple, avec fourniture.
     Vous serrez acompagnés de conseils professionnels pendant toute la durée du projet.
   </p>
 
-  <div class="lg:grid lg:gap-5 lg:grid-cols-9" v-if="imagesReady">
+  <div class="lg:grid lg:gap-5 lg:grid-cols-3">
     <div
       v-for="image in images"
       :key="image.name"
-      :class="[
-        'hover:scale-105 ease-in-out duration-300 overflow-hidden  ',
-        `col-span-${image.size}`,
-        `row-span-${image.size}`
-      ]"
+      class="hover:scale-105 hover:opacity-100 ease-in-out duration-300 overflow-hidden opacity-90"
       @click="selectedImage = image"
     >
       <img :src="image.src" :alt="image.alt" class="image-class rounded-lg" />
@@ -49,18 +44,7 @@
         <p class="m-2">{{ selectedImage.alt }}</p>
         <img :src="selectedImage.src" alt="selected image" class="w-full h-full p-3" />
         <button @click="selectedImage = null" class="absolute top-2 right-2">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            class="w-6 h-6"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z"
-              clip-rule="evenodd"
-            />
-          </svg>
+          <XMarkIcon class="block h-6 w-6" aria-hidden="true" />
         </button>
       </div>
     </div>
@@ -68,25 +52,17 @@
 </template>
 
 <script setup>
-import { ref, watchEffect } from 'vue'
+import { ref } from 'vue'
 import cuisine1 from '@/assets/img/cuisine1-min.jpg'
 import cuisine2 from '@/assets/img/cuisine2-min.jpg'
 import cuisine4 from '@/assets/img/cuisine4-min.jpg'
 import cuisine5 from '@/assets/img/cuisine5-min.jpg'
 import cuisine6 from '@/assets/img/cuisine6-min.jpg'
 import cuisine7 from '@/assets/img/cuisine7-min.jpg'
+import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
+import { DisclosureButton } from '@headlessui/vue'
 
 const selectedImage = ref(null)
-let imagesReady = ref(false)
-function height(id) {
-  let theHeight
-  if (id % 4 === 1) {
-    theHeight = 3
-  } else {
-    theHeight = 1
-  }
-  return theHeight
-}
 
 const imgArray = [
   [cuisine1, 'cuisine', 'Cuisine blanche bois', '1'],
@@ -95,11 +71,11 @@ const imgArray = [
   [cuisine5, 'cuisine', 'Cuisine rouge vif', '0'],
   [cuisine6, 'meuble', 'Meuble laqué', '1'],
   [cuisine7, 'cuisine', 'Cuisine blanche bois', '0'],
-  [cuisine2, 'cuisine', 'Cuisine blanche', '0'],
+  [cuisine2, 'cuisine', 'Cuisine blanche', '1'],
   [cuisine4, 'cuisine', 'Cuisine bois massif', '0'],
   [cuisine5, 'cuisine', 'Cuisine rouge vif', '0'],
   [cuisine7, 'meuble', 'Meuble laqué', '0'],
-  [cuisine1, 'cuisine', 'Cuisine blanche bois', '1'],
+  [cuisine1, 'cuisine', 'Cuisine blanche bois', '0'],
   [cuisine2, 'cuisine', 'Cuisine blanche', '0'],
   [cuisine4, 'cuisine', 'Cuisine bois massif', '0'],
   [cuisine5, 'cuisine', 'Cuisine rouge vif', '0'],
@@ -110,20 +86,15 @@ const imgArray = [
 const images = ref(
   imgArray.map((img, index) => {
     let id = index + 1
-    let imgSize = img[3] === '1' ? '3' : '2'
     return {
       id: id,
       src: img[0],
       name: img[1],
       alt: img[2],
-      description: img[3] === '1',
-      size: imgSize
+      description: img[3] === '1'
     }
   })
 )
-watchEffect(() => {
-  imagesReady.value = images.value.every((image) => image.size)
-})
 </script>
 
 <style scoped>

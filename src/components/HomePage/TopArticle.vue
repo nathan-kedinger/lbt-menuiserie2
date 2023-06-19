@@ -8,11 +8,11 @@
       />
     </div>
     <div class="reveal-bottom-left p-5 -mb-10 bg-white lg:col-start-1 lg:col-span-4 lg:row-end-5">
-      <h2 class="font-bold text-xl">
+      <h2 class="font-bold text-xl text-gray-900">
         Agencement intérieur et extérieur, cuisines, en pose ou sur mesure
       </h2>
-      <p>__</p>
-      <RouterLink class="hover:text-yellow-600" to="/realisations">Nos réalisations</RouterLink>
+      <p class="text-colorSecond">__</p>
+      <RouterLink class="text-colorThird" to="/realisations">Nos réalisations</RouterLink>
     </div>
     <div
       class="lg:col-start-6 lg:col-span-4 lg:row-start-1 lg:row-span-6 z-10 overflow-hidden relative"

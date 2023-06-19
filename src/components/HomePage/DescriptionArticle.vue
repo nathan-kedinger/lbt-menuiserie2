@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <div class="lg:p-20 bg-amber-50 h-3/5">
+  <div class="lg:p-20 bg-colorFourth h-3/5">
     <div class="flex flex-col lg:grid lg:grid-cols-5">
       <div class="col-strart-1 col-span-2">
         <img class="h-full w-full" src="@/assets/img/déco-min.jpg" />

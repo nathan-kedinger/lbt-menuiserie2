@@ -4,3 +4,26 @@
 @tailwind utilities;
 
 
+h1{
+    font-size: xx-large;
+    text-align: center;
+    font-weight: bold;
+    margin: 15px;
+}
+
+.nav-link-m:after{
+    content:'';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background: #b79870;
+    transition: all 0.3s ease-in-out ;
+}
+
+.nav-link-m:hover:after{
+    width: 100%;
+    left:0;
+}
+

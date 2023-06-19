@@ -16,7 +16,7 @@
         id="statue"
         name="statue"
         v-model="statue"
-        class="block w-full rounded-md bg-white border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+        class="block w-full rounded-md bg-white border-0 border-colorSecond px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
       >
         <option value="particulier">Particulier</option>
         <option value="entreprise">Entreprise</option>
@@ -125,7 +125,7 @@
             <Switch
               v-model="agreed"
               :class="[
-                agreed ? 'bg-yellow-950' : 'bg-gray-200',
+                agreed ? 'bg-colorThird' : 'bg-gray-200',
                 'flex w-8 flex-none cursor-pointer rounded-full p-px ring-1 ring-inset ring-gray-900/5 transition-colors duration-200 ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
               ]"
             >
@@ -142,14 +142,14 @@
           <SwitchLabel class="text-sm leading-6 text-gray-600">
             En validant, j'accepte la
             {{ ' ' }}
-            <a href="#" class="font-semibold text-yellow-600">politique de confidentialité</a>.
+            <a href="#" class="font-semibold text-colorThird">politique de confidentialité</a>.
           </SwitchLabel>
         </SwitchGroup>
       </div>
       <div class="mt-10">
         <button
           type="submit"
-          class="block w-full rounded-md bg-yellow-950 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-yellow-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          class="block w-full rounded-md bg-colorSecond px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-colorMain focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
         >
           Envoyer
         </button>

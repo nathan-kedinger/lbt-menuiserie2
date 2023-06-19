@@ -1,44 +1,44 @@
 <template>
-  <div class="fixed right-1 top-3 z-10">
+  <div class="fixed -right-4 lg:right-0 top-3 z-10">
     <ul>
       <li class="relative">
-        <a @click="showPhoneNumber">
+        <a @click="showPhone = !showPhone">
           <img
             :src="phoneLogo"
-            class="h-11 w-auto p-2 m-5 bg-gray-700 rounded-full hover:bg-gray-600 hover:scale-110"
+            alt="Logo téléphone"
+            class="h-8 lg:h-9 w-auto p-1 m-5 bg-colorMain rounded-full hover:bg-colorSecond hover:scale-110"
           />
         </a>
+        <transition
+          name="slide"
+          enter-active-class="transition-all duration-300 ease-in-out"
+          leave-active-class="transition-all duration-300 ease-in-out"
+        >
+          <div
+            v-if="showPhone"
+            class="absolute opacity-100 right-7 top-0 z-10 rounded-full h-8 lg:h-9 p-1 pb-4 pl-4 pr-7 bg-colorSecond text-center"
+          >
+            <p class="relative inline-flex text-gray-50 m-0.5">06.06.06.06.06</p>
+          </div>
+        </transition>
       </li>
       <li v-for="item in sideLogo" :key="item.name" :class="item.class">
         <router-link v-if="item.internal" :to="item.href">
           <img
             :src="item.src"
             :alt="item.alt"
-            class="h-11 w-auto p-2 m-5 bg-gray-700 rounded-full hover:bg-gray-600 hover:scale-110"
+            class="h-8 lg:h-9 w-auto p-1 m-5 bg-colorMain rounded-full hover:bg-colorSecond hover:scale-110"
           />
         </router-link>
         <a v-else :href="item.href">
           <img
             :src="item.src"
             :alt="item.alt"
-            class="h-11 w-auto p-2 m-5 bg-gray-700 rounded-full hover:bg-gray-600 hover:scale-110"
+            class="h-8 lg:h-9 w-auto p-1 m-5 bg-colorMain rounded-full hover:bg-colorSecond hover:scale-110"
           />
         </a>
       </li>
     </ul>
-  </div>
-  <div class="fixed right-4 top-10 z-40">
-    <div
-      v-show="showPhone"
-      :class="[
-        'absolute right-2 top-0.5 rounded-full h-10 p-2 pl-4 pr-11 m-5 bg-gray-700 text-center',
-        showPhone
-          ? 'opacity-100 -translate-x-0 duration-700 ease-in-out transition-transform'
-          : 'opacity-0 translate-x-full'
-      ]"
-    >
-      <p class="relative inline-flex text-gray-50 m-0.5">06.06.06.06.06</p>
-    </div>
   </div>
 </template>
 
@@ -82,11 +82,7 @@ let showPhone = ref(false)
 const checkScroll = function checkscroll() {
   hidePhoneNumber()
 }
-function showPhoneNumber() {
-  if (showPhone.value === false || showPhone.value === true) {
-    showPhone.value = !showPhone.value
-  }
-}
+
 function hidePhoneNumber() {
   showPhone.value = false
 }
@@ -100,9 +96,26 @@ onBeforeUnmount(() => {
 </script>
 
 <style scoped>
-.phone {
+.slide-enter-from {
+  opacity: 0;
+  transform: translateX(8%);
 }
-
-.logo {
+.slide-enter-to {
+  opacity: 1;
+  transform: translateX(0);
+}
+.slide-enter-active {
+  transition: opacity 0.7s, transform 0.3s;
+}
+.slide-leave-from {
+  opacity: 1;
+  transform: translateX(0);
+}
+.slide-leave-to {
+  opacity: 0;
+  transform: translateX(8%);
+}
+.slide-leave-active {
+  transition: opacity 0.7s, transform 0.3s;
 }
 </style>

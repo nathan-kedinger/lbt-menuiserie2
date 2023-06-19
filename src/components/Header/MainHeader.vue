@@ -1,14 +1,14 @@
 <template>
   <header>
     <!-- Background color -->
-    <!--<div class="absolute top-0 left-0 right-0 bg-amber-50 h-3/5 -z-10"></div>-->
+    <!--<div class="absolute top-0 left-0 right-0 bg-colorFourth h-2/5 -z-10"></div>-->
     <img
       class="hidden relative mx-auto mt-8 h-32 w-auto md:block rounded-full"
       src="../../assets/img/logobastien-min.jpg"
       alt="Logo LB Trièves Menuiserie"
     />
     <Disclosure as="nav" class="sm:mt-8" v-slot="{ open }">
-      <div class="w-full px-2 sm:px-6 lg:px-8 border-t-2 border-black">
+      <div class="w-full px-2 sm:px-6 lg:px-8 border-t-2 border-colorMain">
         <div class="relative flex h-16 items-center">
           <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
             <!-- Mobile menu button-->
@@ -29,6 +29,8 @@
                 alt="logo LB Trièves menuiserie"
               />
             </div>
+
+            <!-- Large screen -->
             <div class="hidden w-full sm:ml-6 sm:block">
               <div class="flex justify-between">
                 <RouterLink
@@ -37,20 +39,23 @@
                   :to="item.href"
                   :class="[
                     item.current
-                      ? 'text-yellow-600'
-                      : 'text-dark text-xl font-semibold hover:text-yellow-600',
-                    'rounded-md px-3 py-2 text-sm text-xl font-semibold font-medium'
+                      ? 'text-colorThird'
+                      : 'text-colorMain text-xl font-semibold hover:text-colorThird',
+                    ' px-3 py-2 text-xl font-semibold relative'
                   ]"
                   :aria-current="item.current ? 'page' : undefined"
                   @click="updateCurrent(item)"
-                  >{{ item.name }}</RouterLink
-                >
+                  ><div class="nav-link-m">
+                    {{ item.name }}
+                  </div>
+                </RouterLink>
               </div>
             </div>
           </div>
         </div>
       </div>
 
+      <!-- Smaller screen -->
       <DisclosurePanel class="sm:hidden z-50">
         <div class="space-y-1 px-2 pb-3 pt-2">
           <RouterLink

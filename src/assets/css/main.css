@@ -27,7 +27,7 @@ h1{
 h1, h2, h3{
     color: #553420;
 }
-h2, h3, a, input, label, p{
+h2, h3, h4, a, input, label, p{
     font-family: "Coolvetica rg", sans-serif ;
 }
 

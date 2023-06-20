@@ -15,7 +15,7 @@ export default {
         colorSecond: '#5f4128',
         colorThird: '#9b7a62',
         colorFourth: '#b79870',
-        colorFifth: 'rgba(255,250,229,0.37)'
+        colorFifth: 'rgba(255,239,188,0.4)'
       }
     }
   },

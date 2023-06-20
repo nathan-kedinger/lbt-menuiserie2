@@ -2,28 +2,62 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@font-face {
+    font-family: 'Mercia Script';
+    src: url('@/assets/fonts/merciaScript.otf') format('opentype');
+}
+@font-face {
+    font-family: 'Coolvetica rg';
+    src: url('@/assets/fonts/coolvetica-rg.otf') format('opentype');
+}
+@font-face {
+    font-family: 'Coolvetica Condensed rg';
+    src: url('@/assets/fonts/coolvetica-condensed-rg.otf') format('opentype');
+}
 
 h1{
-    font-size: xx-large;
+    font-size: xxx-large;
     text-align: center;
     font-weight: bold;
     margin: 15px;
+    font-family: "Mercia Script", sans-serif;
+
+}
+
+h1, h2, h3{
+    color: #553420;
+}
+h2, h3, a, input, label, p{
+    font-family: "Coolvetica rg", sans-serif ;
+}
+
+label, p{
+    font-size: larger;
+    font-weight: lighter;
+}
+
+.nav-font{
+    font-family: "Mercia Script", sans-serif;
+    font-size: xx-large;
+}
+
+.nav-link-m{
+    font-weight: bold;
 }
 
 .nav-link-m:after{
     content:'';
     position: absolute;
     left: 50%;
-    bottom: 0;
+    bottom: 2px;
     width: 0;
     height: 1px;
-    background: #b79870;
-    transition: all 0.3s ease-in-out ;
+    background: #553420;
+    transition: all 0.3s ease-in ;
 }
 
 .nav-link-m:hover:after{
-    width: 100%;
-    left:0;
+    width: 80%;
+    left:10%;
 }
 

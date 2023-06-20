@@ -1,14 +1,16 @@
 <template>
-  <div class="fixed -right-4 lg:right-0 top-3 z-10">
+  <div class="fixed -right-4 lg:right-0 top-3 z-50">
     <ul>
       <li class="relative">
-        <a @click="showPhone = !showPhone">
-          <img
-            :src="phoneLogo"
-            alt="Logo téléphone"
-            class="h-8 lg:h-9 w-auto p-1 m-5 bg-colorMain rounded-full hover:bg-colorSecond hover:scale-110"
-          />
-        </a>
+        <div class="relative z-10">
+          <a @click="showPhone = !showPhone">
+            <img
+              :src="phoneLogo"
+              alt="Logo téléphone"
+              class="h-8 lg:h-9 w-auto p-1 m-5 bg-colorMain rounded-full hover:bg-colorSecond hover:scale-110"
+            />
+          </a>
+        </div>
         <transition
           name="slide"
           enter-active-class="transition-all duration-300 ease-in-out"
@@ -16,7 +18,7 @@
         >
           <div
             v-if="showPhone"
-            class="absolute opacity-100 right-7 top-0 z-10 rounded-full h-8 lg:h-9 p-1 pb-4 pl-4 pr-7 bg-colorSecond text-center"
+            class="absolute opacity-100 right-7 top-0 rounded-full h-8 lg:h-9 p-1 pb-4 pl-4 pr-7 bg-colorSecond text-center"
           >
             <p class="relative inline-flex text-gray-50 m-0.5">06.06.06.06.06</p>
           </div>
@@ -61,7 +63,7 @@ const sideLogo = ref([
   },
   {
     name: 'INSTAGRAM',
-    href: 'https://www.instagram.com/lbtmenuiserie/',
+    href: 'https://www.instagram.com/lbtrievesmenuiserie/',
     alt: 'Instagram logo',
     src: instagramLogo,
     class: '',
@@ -104,9 +106,6 @@ onBeforeUnmount(() => {
   opacity: 1;
   transform: translateX(0);
 }
-.slide-enter-active {
-  transition: opacity 0.7s, transform 0.3s;
-}
 .slide-leave-from {
   opacity: 1;
   transform: translateX(0);
@@ -114,8 +113,5 @@ onBeforeUnmount(() => {
 .slide-leave-to {
   opacity: 0;
   transform: translateX(8%);
-}
-.slide-leave-active {
-  transition: opacity 0.7s, transform 0.3s;
 }
 </style>

@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <h3 class="mt-5 text-xl text-center font-bold tracking-tight text-gray-900 sm:text-3xl">
+  <h3 class="mt-5 text-xl text-center font-bold tracking-tight text-colorMain sm:text-3xl">
     Où nous trouver ?
   </h3>
   <div class="mt-20 relative" style="padding-bottom: 75%; height: 0">

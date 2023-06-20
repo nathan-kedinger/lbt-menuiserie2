@@ -15,7 +15,7 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/realisations',
+      path: '/realisations/:gallery',
       name: 'realisations',
       component: RealisationsView
     },

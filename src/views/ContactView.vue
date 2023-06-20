@@ -1,5 +1,9 @@
-<script setup></script>
+<script setup>
+import ContactArticle from '@/components/SharedArticles/ContactArticle.vue'
+</script>
 
-<template>a</template>
+<template>
+  <ContactArticle></ContactArticle>
+</template>
 
 <style scoped></style>

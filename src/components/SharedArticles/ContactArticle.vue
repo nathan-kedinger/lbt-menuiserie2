@@ -4,7 +4,7 @@ import GoogleMapsComponent from '@/components/UtilityComponent/GoogleMapsCompone
 </script>
 
 <template>
-  <h2 class="text-4xl text-black font-bold m-10 text-center">Nous contacter</h2>
+  <h1 class="m-10 text-center">Nous contacter</h1>
   <div class="flex flex-col lg:grid lg:grid-cols-2 content-center">
     <div class="col-start-1 col-span-1">
       <GoogleMapsComponent />

@@ -12,9 +12,10 @@ export default {
         white: '#FFFFFF',
         dark: '#050505',
         colorMain: '#553420',
-        colorSecond: '#9b7a62',
-        colorThird: '#b79870',
-        colorFourth: 'rgba(255,250,229,0.37)'
+        colorSecond: '#5f4128',
+        colorThird: '#9b7a62',
+        colorFourth: '#b79870',
+        colorFifth: 'rgba(255,250,229,0.37)'
       }
     }
   },

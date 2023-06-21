@@ -21,7 +21,7 @@ import { computed, ref } from 'vue'
 import { useHead } from '@vueuse/head'
 
 const siteData = ref({
-  title: 'LB Trièves Menuiserie',
+  title: 'LB Trièves Menuiserie - Menuisier - Agencement - Grenoble - Trièves',
   description:
     "Un projet de menuiserie : cuisine, dressing, parquet, terrasse ? Faites appel à des professionnels de la menuiserie et de l'agenecement, contactez nous !"
 })

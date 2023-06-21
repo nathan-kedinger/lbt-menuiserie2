@@ -1,8 +1,10 @@
 <template>
   <p class="m-6">
-    Nous réalisons toutes vos demandes d'agencements intérieurs. Nos compétences s'étendent de la
-    conception et la fabrication complète de vos agencements, à la pose simple, avec fourniture.
-    Vous serez accompagnés de conseils professionnels pendant toute la durée du projet.
+    Nous réalisons toutes vos demandes d'agencements extérieur. La réalisation d'ouvrage exposés aux
+    intempéries du climat demande un savoir faire particulier. Nous serons heureux de partager avec
+    vous nos connaissances. nous vous acompagnons de conception à la fabrication complète, jusqu'à
+    la de vos agencements extérieurs. Si vous avez un projet de terrasse, de pergola, de
+    jardinière... N'hesitez plus et contactez-nous.
   </p>
 
   <div class="lg:grid lg:gap-5 lg:grid-cols-3">
@@ -71,7 +73,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import porte1 from '@/assets/img/outdoor/exterieur.jpg'
 import porte2 from '@/assets/img/outdoor/porte2.jpg'
 import moustiquaire1 from '@/assets/img/outdoor/moustiquaire.jpg'

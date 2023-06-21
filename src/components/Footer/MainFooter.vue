@@ -3,11 +3,11 @@
     <div class="bg-colorMain text-white pt-16 px-32">
       <div class="grid grid-cols-3 mb-5 gap-x-20">
         <div class="relative block justify-center">
-          <h3>Savoirs faires</h3>
+          <h3 class="mb-4 text-3xl text-white">Savoirs faires</h3>
           <p>
             Concéption et fabrication de menuiserie et d'agencement sur mesure à Grenoble et dans le
             Trièves. Agencement intérieur et extérieur. Fourniture et pose. Cuisinie, Salle de bain,
-            parquets, bibliothèques, dressing, lambris, volets
+            parquets, bibliothèques, dressing, lambris, volets...
           </p>
         </div>
         <div class="relative">
@@ -26,7 +26,7 @@
               <RouterLink to="/realisations/sol-et-plafond">{{ 'Sol et plafond' }}</RouterLink>
             </li>
             <li>
-              <RouterLink to="/pertnership">{{ 'Partenaires' }}</RouterLink>
+              <RouterLink to="/partnership">{{ 'Partenaires' }}</RouterLink>
             </li>
             <li>
               <RouterLink to="/contact">{{ 'Contact' }}</RouterLink>

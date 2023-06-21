@@ -9,7 +9,7 @@
       d'achalandage s'étend dans l'ensemble du Trièves et de la région grenobloise :
     </p>
     <ul>
-      <li>Grenoble</li>
+      <li class="important">Grenoble</li>
       <li>Clelles</li>
       <li>Mens</li>
       <li>Monestier-de-Clermont</li>

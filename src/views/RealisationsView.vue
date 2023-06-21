@@ -56,13 +56,14 @@
 </template>
 
 <script setup>
-import { markRaw, onMounted, ref } from 'vue'
+import { markRaw, onMounted, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import IndoorGalleryArticle from '@/components/Realisations/IndoorGalerieArticle.vue'
 import OutdoorGalleryArticle from '@/components/Realisations/OutdoorGalerieArticle.vue'
 import FloorGalleryArticle from '@/components/Realisations/FloorGalerieArticle.vue'
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/vue/24/outline'
+import { useHead } from '@vueuse/head'
 
 const navigation = ref([
   {
@@ -94,6 +95,9 @@ function updateCurrent(item) {
     navItem.current = navItem === item
   })
   router.push({ name: 'realisations', params: { gallery: item.href } })
+
+  // SEO
+  activeComponent.value = item.href
 }
 
 onMounted(() => {
@@ -101,5 +105,55 @@ onMounted(() => {
   const galleryToShow = route.params.gallery // Accéder aux paramètres de l'URL
   const gallery = navigation.value.find((item) => item.href === galleryToShow)
   updateCurrent(gallery)
+  console.log('Component mounted')
+})
+
+// SEO Optimization
+const activeComponent = ref('interieur') // Initialize this with your default component
+
+watch(activeComponent, (newValue) => {
+  switch (newValue) {
+    case 'interieur':
+      useHead({
+        title: 'Cuisines - Menuisier Trièves et Grenoble',
+        meta: [
+          {
+            name: 'description',
+            content:
+              "Un projet de menuiserie : cuisine, dressing, bibliothèque ? Faites appel à des professionnels de la menuiserie et de l'agenecement, contactez nous !"
+          }
+        ]
+      })
+      break
+    case 'sol-et-plafond':
+      useHead({
+        title: 'Parquet - Menuisier Trièves et Grenoble',
+        meta: [
+          {
+            name: 'description',
+            content:
+              "Un projet de menuiserie : Parquet, stratifié, lambris ? Faites appel à des professionnels de la menuiserie et de l'agenecement, contactez nous !"
+          }
+        ]
+      })
+      break
+    case 'exterieur':
+      useHead({
+        title: 'Terrasses - Menuisier Trièves et Grenoble',
+        meta: [
+          {
+            name: 'description',
+            content:
+              "Un projet de menuiserie : Terrasse, brise-vue, Pergola ? Faites appel à des professionnels de la menuiserie et de l'agenecement, contactez nous !"
+          }
+        ]
+      })
+      break
+    // Add more cases here for more components
+    default:
+      // This will run if none of the cases above match.
+      // You can leave it empty if you don't need it.
+      break
+  }
 })
 </script>

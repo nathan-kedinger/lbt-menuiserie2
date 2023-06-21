@@ -1,8 +1,9 @@
 <template>
   <p class="m-6">
-    Nous réalisons toutes vos demandes d'agencements intérieurs. Nos compétences s'étendent de la
-    conception et la fabrication complète de vos agencements, à la pose simple, avec fourniture.
-    Vous serez accompagnés de conseils professionnels pendant toute la durée du projet.
+    Nous réalisons toutes vos poses de sol, d'habillages muraux et de plafonds. Parquet en bois
+    massif cloué ou collé, parquet stratifié, lambris bois... Nous maitrisons les techniques de pose
+    d'habillage, du sol au plafond. Nous vous accompagnerons de la réflexion à la réalisation de vos
+    projets d'habillages en bois ou en matériaux composites.
   </p>
 
   <div class="lg:grid lg:gap-5 lg:grid-cols-3">

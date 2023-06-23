@@ -36,9 +36,9 @@
 import { onMounted, ref } from 'vue'
 import { ArrowRightIcon } from '@heroicons/vue/24/outline'
 
-import parquet from '@/assets/img/floor/parquet.jpg'
-import exterieur from '@/assets/img/outdoor/exterieur.jpg'
-import interieur from '@/assets/img/indoor/cuisine6-min.jpg'
+import parquet from '../../assets/img/floor/parquet.jpg'
+import exterieur from '../../assets/img/outdoor/exterieur.jpg'
+import interieur from '../../assets/img/indoor/cuisine6-min.jpg'
 
 import AOS from 'aos'
 import 'aos/dist/aos.css'

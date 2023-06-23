@@ -11,11 +11,11 @@
 </template>
 
 <script setup>
-import PresentationArticle from '@/components/HomePage/TopArticle.vue'
-import SeparationComponent from '@/components/UtilityComponent/SeparationComponent.vue'
-import DescriptionArticle from '@/components/HomePage/DescriptionArticle.vue'
-import ContactArticle from '@/components/SharedArticles/ContactArticle.vue'
-import KnowledgeArticle from '@/components/HomePage/PrestationsArticle.vue'
+import PresentationArticle from '../components/HomePage/TopArticle.vue'
+import SeparationComponent from '../components/UtilityComponent/SeparationComponent.vue'
+import DescriptionArticle from '../components/HomePage/DescriptionArticle.vue'
+import ContactArticle from '../components/SharedArticles/ContactArticle.vue'
+import KnowledgeArticle from '../components/HomePage/PrestationsArticle.vue'
 
 import { computed, ref } from 'vue'
 import { useHead } from '@vueuse/head'

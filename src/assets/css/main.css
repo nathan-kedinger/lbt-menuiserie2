@@ -4,15 +4,15 @@
 @tailwind utilities;
 @font-face {
     font-family: 'Mercia Script';
-    src: url('@/assets/fonts/merciaScript.otf') format('opentype');
+    src: url('../fonts/mercia_script.otf') format('opentype');
 }
 @font-face {
     font-family: 'Coolvetica rg';
-    src: url('@/assets/fonts/coolvetica-rg.otf') format('opentype');
+    src: url('../fonts/coolvetica_rg.otf') format('opentype');
 }
 @font-face {
     font-family: 'Coolvetica Condensed rg';
-    src: url('@/assets/fonts/coolvetica-condensed-rg.otf') format('opentype');
+    src: url('../fonts/coolvetica_condensed_rg.otf') format('opentype');
 }
 
 h1{

@@ -72,12 +72,12 @@
 
 <script setup>
 import { ref } from 'vue'
-import cuisine1 from '@/assets/img/indoor/cuisine1-min.jpg'
-import cuisine2 from '@/assets/img/indoor/cuisine2-min.jpg'
-import cuisine4 from '@/assets/img/indoor/cuisine4-min.jpg'
-import cuisine5 from '@/assets/img/indoor/cuisine5-min.jpg'
-import cuisine6 from '@/assets/img/indoor/cuisine6-min.jpg'
-import cuisine7 from '@/assets/img/indoor/cuisine7-min.jpg'
+import cuisine1 from '../../assets/img/indoor/cuisine1-min.jpg'
+import cuisine2 from '../../assets/img/indoor/cuisine2-min.jpg'
+import cuisine4 from '../../assets/img/indoor/cuisine4-min.jpg'
+import cuisine5 from '../../assets/img/indoor/cuisine5-min.jpg'
+import cuisine6 from '../../assets/img/indoor/cuisine6-min.jpg'
+import cuisine7 from '../../assets/img/indoor/cuisine7-min.jpg'
 import { XMarkIcon, ChevronLeftIcon, ChevronRightIcon } from '@heroicons/vue/24/outline'
 
 const selectedImage = ref(null)

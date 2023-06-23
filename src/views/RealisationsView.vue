@@ -105,7 +105,6 @@ onMounted(() => {
   const galleryToShow = route.params.gallery // Accéder aux paramètres de l'URL
   const gallery = navigation.value.find((item) => item.href === galleryToShow)
   updateCurrent(gallery)
-  console.log('Component mounted')
 })
 
 // SEO Optimization
@@ -149,10 +148,7 @@ watch(activeComponent, (newValue) => {
         ]
       })
       break
-    // Add more cases here for more components
     default:
-      // This will run if none of the cases above match.
-      // You can leave it empty if you don't need it.
       break
   }
 })

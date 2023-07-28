@@ -7,7 +7,7 @@ import PartnershipView from '@/views/PartnershipView.vue'
 import ContactView from '@/views/ContactView.vue'
 
 const router = createRouter({
-  history: createWebHistory('/preview/lbt-menuiserie.fr/'),
+  history: createWebHistory('/'),
   routes: [
     {
       path: '/',

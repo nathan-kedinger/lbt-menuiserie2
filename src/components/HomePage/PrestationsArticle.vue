@@ -57,21 +57,24 @@ const prestations = ref([
     gallery: 'interieur',
     colNumber: '2',
     src: interieur,
-    p: 'Cuisine, salle de bain, dressing, bibliothèque, mobilier.'
+    p: 'Cuisine, salle de bain, dressing, bibliothèque, mobilier.',
+    alt: 'Image cuisine'
   },
   {
     h3: 'Agencement extérieur :',
     gallery: 'exterieur',
     colNumber: '3',
     src: exterieur,
-    p: 'Terrasse, pergola, marquise, jardinière, bardage.'
+    p: 'Terrasse, pergola, marquise, jardinière, bardage.',
+    alt: 'Image porte extérieur'
   },
   {
     h3: 'Sol et plafond :',
     gallery: 'sol-et-plafond',
     colNumber: '4',
     src: parquet,
-    p: 'Parquet flottant, massif, stratifié, lambris.'
+    p: 'Parquet flottant, massif, stratifié, lambris.',
+    alt: 'Image sol'
   }
 ])
 </script>

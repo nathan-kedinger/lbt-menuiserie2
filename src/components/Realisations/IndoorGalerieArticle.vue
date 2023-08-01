@@ -47,7 +47,7 @@
         <!-- Modal header -->
         <div class="flex items-center justify-between p-3 border-b">
           <h3 class="text-xl font-medium text-gray-900">
-            {{ selectedImage.alt }}
+            {{ selectedImage.name }}
           </h3>
           <button
             @click="selectedImage = null"
@@ -61,7 +61,7 @@
         <div class="p-2">
           <img
             :src="selectedImage.src"
-            alt="selected image"
+            :alt="selectedImage.name"
             class="object-contain h-full w-full p-1"
           />
         </div>
@@ -71,48 +71,39 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import cuisine1 from '../../assets/img/indoor/cuisine1-min.jpg'
-import cuisine2 from '../../assets/img/indoor/cuisine2-min.jpg'
-import cuisine4 from '../../assets/img/indoor/cuisine4-min.jpg'
-import cuisine5 from '../../assets/img/indoor/cuisine5-min.jpg'
-import cuisine6 from '../../assets/img/indoor/cuisine6-min.jpg'
-import cuisine7 from '../../assets/img/indoor/cuisine7-min.jpg'
+import { onMounted, ref } from 'vue'
 import { XMarkIcon, ChevronLeftIcon, ChevronRightIcon } from '@heroicons/vue/24/outline'
 
 const selectedImage = ref(null)
+const images = ref([])
 
-const imgArray = [
-  [cuisine1, 'cuisine', 'Cuisine blanche bois', '1'],
-  [cuisine2, 'cuisine', 'Cuisine blanche', '0'],
-  [cuisine4, 'cuisine', 'Cuisine bois massif', '0'],
-  [cuisine5, 'cuisine', 'Cuisine rouge vif', '0'],
-  [cuisine6, 'meuble', 'Meuble laqué', '1'],
-  [cuisine7, 'cuisine', 'Cuisine blanche bois', '0'],
-  [cuisine2, 'cuisine', 'Cuisine blanche', '1'],
-  [cuisine4, 'cuisine', 'Cuisine bois massif', '0'],
-  [cuisine5, 'cuisine', 'Cuisine rouge vif', '0'],
-  [cuisine7, 'meuble', 'Meuble laqué', '0'],
-  [cuisine1, 'cuisine', 'Cuisine blanche bois', '0'],
-  [cuisine2, 'cuisine', 'Cuisine blanche', '0'],
-  [cuisine4, 'cuisine', 'Cuisine bois massif', '0'],
-  [cuisine5, 'cuisine', 'Cuisine rouge vif', '0'],
-  [cuisine1, 'cuisine', 'Cuisine blanche bois', '0'],
-  [cuisine6, 'meuble', 'Meuble laqué', '1']
-]
+onMounted(async () => {
+  const res = await fetch(import.meta.env.VITE_BASE_URL + 'api/indoor_pictures')
 
-const images = ref(
-  imgArray.map((img, index) => {
-    let id = index + 1
-    return {
-      id: id,
-      src: img[0],
-      name: img[1],
-      alt: img[2],
-      description: img[3] === '1'
-    }
-  })
-)
+  // Print the raw response text
+  const text = await res.text()
+  console.log(text)
+
+  // Parse it as JSON
+  try {
+    const data = JSON.parse(text)
+
+    console.log(data)
+
+    images.value = data['hydra:member'].map((img, index) => {
+      let id = index + 1
+      return {
+        id: id,
+        src: import.meta.env.VITE_BASE_URL + 'images/' + img.illustration,
+        name: img.name,
+        alt: img.name,
+        description: img.description
+      }
+    })
+  } catch (error) {
+    console.error('Error parsing JSON:', error)
+  }
+})
 
 function nextImage() {
   const currentIndex = images.value.findIndex((image) => image.id === selectedImage.value.id)

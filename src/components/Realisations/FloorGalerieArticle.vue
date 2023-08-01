@@ -48,7 +48,7 @@
         <!-- Modal header -->
         <div class="flex items-center justify-between p-3 border-b">
           <h3 class="text-xl font-medium text-gray-900">
-            {{ selectedImage.alt }}
+            {{ selectedImage.name }}
           </h3>
           <button
             @click="selectedImage = null"
@@ -62,7 +62,7 @@
         <div class="p-2">
           <img
             :src="selectedImage.src"
-            alt="selected image"
+            :alt="selectedImage.name"
             class="object-contain h-full w-full p-1"
           />
         </div>
@@ -72,44 +72,39 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import porte1 from '@/assets/img/outdoor/exterieur.jpg'
-import porte2 from '@/assets/img/outdoor/porte2.jpg'
-import moustiquaire1 from '@/assets/img/outdoor/moustiquaire.jpg'
-import moustiquaire2 from '@/assets/img/outdoor/moustiquaire2.jpg'
-import moustiquaire3 from '@/assets/img/outdoor/moustiquaire3.jpg'
-import palissade from '@/assets/img/outdoor/palissade.jpg'
+import { onMounted, ref } from 'vue'
 import { XMarkIcon, ChevronLeftIcon, ChevronRightIcon } from '@heroicons/vue/24/outline'
 
 const selectedImage = ref(null)
+const images = ref([])
 
-const imgArray = [
-  [porte1, 'cuisine', 'Cuisine blanche bois', '0'],
-  [porte2, 'cuisine', 'Cuisine blanche bois', '0'],
-  [moustiquaire1, 'cuisine', 'Cuisine blanche bois', '0'],
-  [moustiquaire2, 'cuisine', 'Cuisine blanche bois', '0'],
-  [moustiquaire3, 'cuisine', 'Cuisine blanche bois', '0'],
-  [palissade, 'cuisine', 'Cuisine blanche bois', '0'],
-  [moustiquaire1, 'cuisine', 'Cuisine blanche bois', '0'],
-  [moustiquaire2, 'cuisine', 'Cuisine blanche bois', '0'],
-  [moustiquaire3, 'cuisine', 'Cuisine blanche bois', '0'],
-  [porte1, 'cuisine', 'Cuisine blanche bois', '0'],
-  [porte2, 'cuisine', 'Cuisine blanche bois', '0'],
-  [moustiquaire1, 'cuisine', 'Cuisine blanche bois', '0'],
-  [moustiquaire2, 'cuisine', 'Cuisine blanche bois', '0']
-]
-const images = ref(
-  imgArray.map((img, index) => {
-    let id = index + 1
-    return {
-      id: id,
-      src: img[0],
-      name: img[1],
-      alt: img[2],
-      description: img[3] === '1'
-    }
-  })
-)
+onMounted(async () => {
+  const res = await fetch(import.meta.env.VITE_BASE_URL + 'api/floor_pictures')
+
+  // Print the raw response text
+  const text = await res.text()
+  console.log(text)
+
+  // Parse it as JSON
+  try {
+    const data = JSON.parse(text)
+
+    console.log(data)
+
+    images.value = data['hydra:member'].map((img, index) => {
+      let id = index + 1
+      return {
+        id: id,
+        src: import.meta.env.VITE_BASE_URL + 'images/' + img.illustration,
+        name: img.name,
+        alt: img.name,
+        description: img.description
+      }
+    })
+  } catch (error) {
+    console.error('Error parsing JSON:', error)
+  }
+})
 
 function nextImage() {
   const currentIndex = images.value.findIndex((image) => image.id === selectedImage.value.id)

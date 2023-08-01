@@ -20,7 +20,7 @@
             v-if="showPhone"
             class="absolute opacity-100 right-7 top-0 rounded-full h-8 lg:h-9 p-1 pb-4 pl-4 pr-7 bg-colorSecond text-center"
           >
-            <p class="relative inline-flex text-gray-50 m-0.5">06.06.06.06.06</p>
+            <p class="relative inline-flex text-gray-50 m-0.5">06.17.62.46.26</p>
           </div>
         </transition>
       </li>

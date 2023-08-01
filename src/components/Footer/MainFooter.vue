@@ -40,14 +40,14 @@
             <a href="">
               <img
                 class="block h-6 w-6"
-                src="@/assets/img/logos/logo-instagram.png"
+                src="../../assets/img/logos/logo-instagram.png"
                 alt="Logo Instagram"
               />
             </a>
             <a href="">
               <img
                 class="block h-6 w-6 ml-3"
-                src="@/assets/img/logos/logo-facebook.png"
+                src="../../assets/img/logos/logo-facebook.png"
                 alt="Logo Facebook"
               />
             </a>

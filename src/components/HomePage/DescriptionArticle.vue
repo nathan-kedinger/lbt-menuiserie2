@@ -4,7 +4,7 @@
   <div class="lg:p-20 bg-colorFifth h-3/5">
     <div class="flex flex-col lg:grid lg:grid-cols-5">
       <div class="col-strart-1 col-span-2">
-        <img class="h-full w-full" src="@/assets/img/déco-min.jpg" />
+        <img class="h-full w-full" src="../../assets/img/déco-min.jpg" />
       </div>
       <div class="col-start-4 col-span-2 text-center">
         <div class=""></div>

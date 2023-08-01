@@ -1,10 +1,9 @@
 <template>
   <div class="relative">
-    <img
+    <IconArrowUp
       @click="scrollTop"
       v-show="isShown"
-      src="@/assets/img/logobastien-min.jpg"
-      class="rounded-full h-10 w-auto z-50 fixed right-3 bottom-4"
+      class="z-50 fixed right-3 bottom-4 ease-in-out hover:scale-105"
       alt="scroll top button"
     />
   </div>
@@ -12,6 +11,7 @@
 
 <script setup>
 import { onBeforeMount, onMounted, ref } from 'vue'
+import IconArrowUp from '../icons/IconArrowUp.vue'
 
 const isShown = ref(false)
 

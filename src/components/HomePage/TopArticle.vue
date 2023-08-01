@@ -73,7 +73,7 @@
 }
 </style>
 <script setup>
-import useIntersectionObserver from '@/assets/js/useIntersectionObserver'
+import useIntersectionObserver from '../../assets/js/useIntersectionObserver'
 
 useIntersectionObserver([
   '.reveal-left, .reveal-right, .reveal-top, .reveal-bottom-left, .reveal-bottom-right'

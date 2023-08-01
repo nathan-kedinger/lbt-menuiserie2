@@ -15,7 +15,10 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      '/api': 'https://lbt-menuiserie.top'
+      '/api': {
+        target: 'https://lbt-menuiserie.top',
+        changeOrigin: true
+      }
     }
   }
 })

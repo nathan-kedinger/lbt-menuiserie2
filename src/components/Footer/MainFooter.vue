@@ -1,16 +1,16 @@
 <template class="absolute left-0 bottom-0 right-0">
   <footer class="mt-20">
-    <div class="bg-colorMain text-white pt-16 px-32">
-      <div class="grid grid-cols-3 mb-5 gap-x-20">
-        <div class="relative block justify-center">
-          <h3 class="mb-4 text-3xl text-white">Savoirs faires</h3>
+    <div class="bg-colorMain text-white pt-16 px-8 lg:px-32">
+      <div class="lg:grid lg:grid-cols-3 lg:mb-5 mb-10 gap-x-20">
+        <div class="lg:relative block justify-center mb-10 lg:mb-2">
+          <h3 class="mb-4 text-3xl text-white">Savoir-faire</h3>
           <p>
-            Concéption et fabrication de menuiserie et d'agencement sur mesure à Grenoble et dans le
-            Trièves. Agencement intérieur et extérieur. Fourniture et pose. Cuisinie, Salle de bain,
-            parquets, bibliothèques, dressing, lambris, volets...
+            Conception et fabrication de menuiserie et d'agencement sur mesure à Grenoble et dans le
+            Trièves. Agencement intérieur et extérieur. Fourniture et pose. Cuisine, salle de bain,
+            parquet, bibliothèque, dressing, lambris, volets...
           </p>
         </div>
-        <div class="relative">
+        <div class="lg:relative block mb-10 lg:mb-2">
           <h3 class="mb-2 text-3xl text-white">PLAN DU SITE</h3>
           <ul>
             <li>
@@ -34,8 +34,8 @@
             <li></li>
           </ul>
         </div>
-        <div class="relative">
-          <h3 class="mb-4 text-3xl text-white">COORDONEES</h3>
+        <div class="lg:relative block mb-10 lg:mb-2">
+          <h3 class="mb-4 text-3xl text-white">COORDONNEES</h3>
           <div class="inline-flex">
             <a href="">
               <img
@@ -58,7 +58,7 @@
           <p>Mail : legendre.bastien@gmail.com</p>
         </div>
       </div>
-      <div class="relative text-center">
+      <div class="relative text-center sm:block">
         <p>© LB Trièves Menuiserie | Tous droits réservés</p>
         <RouterLink to="/legal">{{ 'Mentions légales' }}</RouterLink>
         <p>Réalisation Nathan KEDINGER</p>

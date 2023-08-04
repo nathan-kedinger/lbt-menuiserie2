@@ -37,14 +37,14 @@
         <div class="lg:relative block mb-10 lg:mb-2">
           <h3 class="mb-4 text-3xl text-white">COORDONNEES</h3>
           <div class="inline-flex">
-            <a href="https://www.facebook.com/profile.php?id=100083121973265">
+            <a href="https://www.instagram.com/lbtrievesmenuiserie/">
               <img
                 class="block h-6 w-6"
                 src="../../assets/img/logos/logo-instagram.png"
                 alt="Logo Instagram"
               />
             </a>
-            <a href="https://www.instagram.com/lbtrievesmenuiserie/">
+            <a href="https://www.facebook.com/profile.php?id=100083121973265">
               <img
                 class="block h-6 w-6 ml-3"
                 src="../../assets/img/logos/logo-facebook.png"

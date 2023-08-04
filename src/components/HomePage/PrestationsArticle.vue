@@ -18,7 +18,11 @@
       :data-aos-delay="(index + 1) * 200"
     >
       <RouterLink :to="{ name: 'realisations', params: { gallery: prestation.gallery } }">
-        <img class="hover:drop-shadow-2xl h-full w-full" :src="prestation.src" />
+        <img
+          class="hover:drop-shadow-2xl h-full w-full"
+          :src="prestation.src"
+          :alt="prestation.alt"
+        />
         <div class="bg-white pl-5 lg:-m-6 lg:absolute -bottom-10 lg:right-10 mb-5">
           <h3 class="font-bold mb-1 text-colorMain text-xl">{{ prestation.h3 }}</h3>
           <p>{{ prestation.p }}</p>

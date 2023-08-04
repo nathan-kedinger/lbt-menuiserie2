@@ -65,6 +65,7 @@
             :alt="selectedImage.name"
             class="object-contain h-full w-full p-1"
           />
+          <p>{{ selectedImage.description }}</p>
         </div>
       </div>
     </div>

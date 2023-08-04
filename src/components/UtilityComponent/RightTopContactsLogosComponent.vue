@@ -3,13 +3,13 @@
     <ul>
       <li class="relative">
         <div class="relative z-10">
-          <a @click="showPhone = !showPhone">
+          <button @click="showPhone = !showPhone" class="px-5 pt-5">
             <img
               :src="phoneLogo"
               alt="Logo téléphone"
-              class="h-8 lg:h-9 w-auto p-1 m-5 bg-colorMain rounded-full hover:bg-colorSecond hover:scale-110"
+              class="h-8 lg:h-9 w-auto p-1 bg-colorMain rounded-full hover:bg-colorSecond hover:scale-110"
             />
-          </a>
+          </button>
         </div>
         <transition
           name="slide"
@@ -18,7 +18,7 @@
         >
           <div
             v-if="showPhone"
-            class="absolute opacity-100 right-7 top-0 rounded-full h-8 lg:h-9 p-1 pb-4 pl-4 pr-7 bg-colorSecond text-center"
+            class="absolute opacity-100 right-7 top-5 rounded-full h-8 lg:h-9 p-1 pb-4 pl-4 pr-7 bg-colorSecond text-center"
           >
             <p class="relative inline-flex text-gray-50 m-0.5">06.17.62.46.26</p>
           </div>

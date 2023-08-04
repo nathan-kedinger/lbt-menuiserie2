@@ -1,5 +1,5 @@
 <template>
-  <Disclosure as="nav2" v-slot="{ open }">
+  <Disclosure as="nav2" v-slot="{ open, close }">
     <!-- Large screen -->
     <div class="hidden w-full mt-1 mb-8 sm:block">
       <div class="flex justify-center">
@@ -41,7 +41,12 @@
                 'block rounded-md px-3 py-2  font-medium '
               ]"
               :aria-current="item.current ? 'page' : undefined"
-              @click="updateCurrent(item)"
+              @click="
+                () => {
+                  updateCurrent(item)
+                  close()
+                }
+              "
             >
               <p>{{ item.name }}</p>
             </div>

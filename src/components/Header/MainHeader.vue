@@ -7,7 +7,7 @@
       src="../../assets/img/logobastien-min.jpg"
       alt="Logo LB Trièves Menuiserie"
     />
-    <Disclosure as="nav" class="sm:mt-8" v-slot="{ open }">
+    <Disclosure as="nav" class="sm:mt-8" v-slot="{ open, close }">
       <div class="w-full px-2 sm:px-6 lg:px-8 border-t-2 border-colorMain">
         <div class="relative flex h-16 items-center">
           <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -65,7 +65,12 @@
               'block rounded-md px-3 py-2 text-base font-medium'
             ]"
             :aria-current="item.current ? 'page' : undefined"
-            @click="updateCurrent(item)"
+            @click="
+              () => {
+                updateCurrent(item)
+                close()
+              }
+            "
             >{{ item.name }}
           </RouterLink>
         </div>

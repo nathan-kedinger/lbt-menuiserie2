@@ -38,10 +38,10 @@ label, p{
 .nav-font{
     font-family: "Mercia Script", sans-serif;
     font-size: xx-large;
+
 }
 
 .nav-link-m{
-    font-weight: bold;
 }
 
 .nav-link-m:after{

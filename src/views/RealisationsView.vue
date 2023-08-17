@@ -6,7 +6,7 @@
         <div
           v-for="item in navigation"
           :key="item.name"
-          class="text-white bg-colorMain font-semibold hover:text-colorMain hover:bg-colorFifth px-4 py-2 w-full text-center text-sm font-semibold drop-shadow-md"
+          class="text-white bg-colorMain cursor-pointer font-semibold hover:text-colorMain hover:bg-colorFifth px-4 py-2 w-full text-center text-sm font-semibold drop-shadow-md"
           :aria-current="item.current ? 'page' : undefined"
           @click="updateCurrent(item)"
         >

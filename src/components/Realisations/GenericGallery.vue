@@ -70,13 +70,16 @@ import { ref } from 'vue'
 import { ChevronLeftIcon, ChevronRightIcon, XMarkIcon } from '@heroicons/vue/24/outline'
 import { ImageApiClass } from '@/assets/js/ImageApiClass'
 
+const props = defineProps({
+  galleryData: String
+})
 const selectedImage = ref(null)
 const images = ref([])
 const imageApi = new ImageApiClass()
 
 async function fetchImages() {
   try {
-    images.value = await imageApi.getImages('api/floor_pictures')
+    images.value = await imageApi.getImages(props.galleryData)
   } catch (e) {
     console.error(e)
   }

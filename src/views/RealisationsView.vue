@@ -18,6 +18,9 @@
     <div class="overflow-hidden">
       <div v-for="item in navigation" :key="item.name" v-show="item.current">
         <h1>{{ item.name }}</h1>
+        <p class="m-6">
+          {{ item.description }}
+        </p>
         <div class="flex justify-center">
           <div class="flex justify-center w-1/2 sm:hidden border-2 rounded-lg mb-3">
             <!-- Mobile menu button-->
@@ -54,7 +57,7 @@
         </DisclosurePanel>
 
         <!-- Access to galleries-->
-        <component :is="item.gallery" />
+        <component :is="item.gallery" :galleryData="item.galleryData" />
       </div>
     </div>
   </Disclosure>
@@ -63,33 +66,51 @@
 <script setup>
 import { markRaw, onMounted, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import IndoorGalleryArticle from '@/components/Realisations/IndoorGalerieArticle.vue'
-import OutdoorGalleryArticle from '@/components/Realisations/OutdoorGalerieArticle.vue'
-import FloorGalleryArticle from '@/components/Realisations/FloorGalerieArticle.vue'
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/vue/24/outline'
 import { useHead } from '@vueuse/head'
+import GenericGallery from '@/components/Realisations/GenericGallery.vue'
 
 const navigation = ref([
   {
     name: 'Cuisines et Agencements',
     href: 'interieur',
     current: true,
-    gallery: markRaw(IndoorGalleryArticle),
+    gallery: markRaw(GenericGallery), // using markRaw to improve performance (avoid reactivity)
+    galleryData: 'api/indoor_pictures',
+    description:
+      '    ' +
+      "    Nous réalisons toutes vos demandes d'agencements intérieurs. Nos compétences s'étendent de la\n" +
+      '    conception et la fabrication complète de vos agencements, à la pose simple, avec fourniture.\n' +
+      '    Vous serez accompagnés de conseils professionnels pendant toute la durée du projet.',
     class: ''
   },
   {
     name: 'Agencements Extérieurs',
     href: 'exterieur',
     current: false,
-    gallery: markRaw(OutdoorGalleryArticle),
+    gallery: markRaw(GenericGallery),
+    galleryData: 'api/outdoor_pictures',
+    description:
+      '' +
+      "    Nous réalisons toutes vos demandes d'agencements extérieur. La réalisation d'ouvrage exposés aux\n" +
+      '    intempéries du climat demande un savoir faire particulier. Nous serons heureux de partager avec\n' +
+      "    vous nos connaissances. nous vous acompagnons de conception à la fabrication complète, jusqu'à\n" +
+      '    la de vos agencements extérieurs. Si vous avez un projet de terrasse, de pergola, de\n' +
+      "    jardinière... N'hesitez plus et contactez-nous.",
     class: 'border-r-2 border-l-2'
   },
   {
     name: 'Sols et Plafonds',
     href: 'sol-et-plafond',
     current: false,
-    gallery: markRaw(FloorGalleryArticle),
+    gallery: markRaw(GenericGallery),
+    galleryData: 'api/floor_pictures',
+    description:
+      "    Nous réalisons toutes vos poses de sol, d'habillages muraux et de plafonds. Parquet en bois\n" +
+      '    massif cloué ou collé, parquet stratifié, lambris bois... Nous maitrisons les techniques de pose\n' +
+      "    d'habillage, du sol au plafond. Nous vous accompagnerons de la réflexion à la réalisation de vos\n" +
+      "    projets d'habillages en bois ou en matériaux composites.",
     class: ''
   }
 ])
